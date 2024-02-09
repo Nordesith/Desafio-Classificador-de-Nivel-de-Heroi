@@ -1,1 +1,1 @@
-Inicio do Desafio
+console.log("Olá mundo!")
