@@ -1,27 +1,26 @@
 let nome = "Strange";
 let XP = parseInt(Math.random() * 11000 + 1);
+
+console.log(`A quantidade de XP do Herói ${nome} é de ${XP}.`);
+
+let niveis = [
+    { limite: 1000, nome: "Ferro" },
+    { limite: 2000, nome: "Bronze" },
+    { limite: 5000, nome: "Prata" },
+    { limite: 7000, nome: "Ouro" },
+    { limite: 8000, nome: "Platina" },
+    { limite: 9000, nome: "Ascendente" },
+    { limite: 10000, nome: "Imortal" },
+    { limite: Infinity, nome: "Radiante" }
+];
+
 let nivel = "";
 
-console.log(`A quantidade de XP do Heroi ${nome} é de ${XP}.`);
-
-if (XP <= 1000) {
-    nivel = "Ferro";
-} else if (XP >= 1001 && XP <= 2000) {
-    nivel = "Bronze";
-} else if (XP >= 2001 && XP <= 5000) {
-    nivel = "Prata";
-} else if (XP >= 5001 && XP <= 7000) {
-    nivel = "Ouro";
-} else if (XP >= 7001 && XP <=8000) {
-    nivel = "Platina";
-} else if (XP >= 8001 && XP <= 9000) {
-    nivel = "Ascendente";
-} else if (XP >= 9001 && XP <= 10000) {
-    nivel = "Imortal";
-} else if (XP >= 10001) {
-   nivel = "Radiante";
+for (let i = 0; i < niveis.length; i++) {
+    if (XP <= niveis[i].limite) {
+        nivel = niveis[i].nome;
+        break;
+    }
 }
-
-
 
 console.log(`O Herói de nome ${nome} está no nível de ${nivel}.`);
